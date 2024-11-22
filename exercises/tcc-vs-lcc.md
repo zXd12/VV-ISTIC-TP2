@@ -6,3 +6,11 @@ A refresher on TCC and LCC is available in the [course notes](https://oscarlvp.g
 
 ## Answer
 
+Intuitively, a class where TCC and LCC are equal follows this rule:
+Methodes with at least one instance variable in common **must** share **all** of their used instance variable.
+
+For clarity, lets not actual write a java class, but represent it in a more abstract way.
+`a`, `b`, `c` and `d` being instance variables, and the function `x1(a,b)`
+`x2(a)` is not allowed, `x2(a,b,c)` is not allowed, if `a` is used in `x2`, only `x2(a,b)` is.
+its also possible to have multiple "groups" of function sharing the usage of some variable, like
+`x3(c)`, `x4(c)` and `x5(c)` or `x6(d)`
