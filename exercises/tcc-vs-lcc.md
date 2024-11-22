@@ -9,7 +9,7 @@ A refresher on TCC and LCC is available in the [course notes](https://oscarlvp.g
 Intuitively, a class where TCC and LCC are equal follows this rule: pairs of methode can not be (linked indirectly and not linked directly) in the graph. \
 The constructed graph should be comprised only of fully interconnected clusters.
 
-For clarity, lets not actual write a java class, but represent it in a more abstract way. \
-`a`, `b`, `c` and `d` being instance variables, and the functions `x1(a,b)` and `x2(c)` \
-if `a` is used in `x3`, `x3(a,b,c)` is not allowed, only a sub-group of [`a`,`b`] if, like `x2(a)` or `x2(a,b)`. \
-a methode `x4` using `c` could be either `x4(c)` or `x4(c,d)`
+For clarity, lets not actual write the java class, but represent it in a more abstract way. \
+with `a`, `b`, `c` and `d` being instance variables, and the functions `x1(a,b)` and `x2(c)` \
+if `a` is used in `x3`, using `c` is not allowed, only a sub-group of [`a`,`b`,`d`], like `x3(a)` or `x3(a,d)`. Let's continue with `x3(a,b)` \
+a methode `x4` using `c` could then be either `x4(c)` or `x4(c,d)`
