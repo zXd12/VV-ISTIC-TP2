@@ -6,11 +6,10 @@ A refresher on TCC and LCC is available in the [course notes](https://oscarlvp.g
 
 ## Answer
 
-Intuitively, a class where TCC and LCC are equal follows this rule: \
-Methodes with at least one instance variable in common **must** share **all** of their used instance variable.
+Intuitively, a class where TCC and LCC are equal follows this rule: pairs of methode can not be (linked indirectly and not linked directly) in the graph. \
+The constructed graph should be comprised only of fully interconnected clusters.
 
 For clarity, lets not actual write a java class, but represent it in a more abstract way. \
-`a`, `b`, `c` and `d` being instance variables, and the function `x1(a,b)` \
-`x2(a)` is not allowed, `x2(a,b,c)` is not allowed, if `a` is used in `x2`, only `x2(a,b)` is. \
-its also possible to have multiple "groups" of function sharing the usage of some variable, like \
-`x3(c)`, `x4(c)` and `x5(c)` or `x6(d)`
+`a`, `b`, `c` and `d` being instance variables, and the functions `x1(a,b)` and `x2(c)` \
+if `a` is used in `x3`, `x3(a,b,c)` is not allowed, only a sub-group of [`a`,`b`] if, like `x2(a)` or `x2(a,b)`. \
+a methode `x4` using `c` could be either `x4(c)` or `x4(c,d)`
